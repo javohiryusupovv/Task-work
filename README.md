@@ -82,7 +82,25 @@ src/
  │
  └── styles/
      └── globals.css                # Global Tailwind style
+```
 
+## 🗺️ Polygon chizish — Qanday ishlaydi?
+Xarita sahifasida foydalanuvchilar real vaqtda polygon (hudud) chizishi mumkin.
 
+## 1️⃣ Nuqtalar qo‘yish
+Xarita ustiga bosish orqali polygonning burchak nuqtalari qo‘yiladi.
+Kamida 3 ta nuqta qo‘yilganda shakl hosil bo‘ladi.
 
+## 2️⃣ Tasdiqlash
+Chizish tugagach “Tasdiqlash” tugmasini bosing.
+Polygon nomi va izohini kiriting.
+Saqlangandan so‘ng xaritada ko‘rinadi va ro‘yxatga qo‘shiladi.
+
+## 3️⃣ Bekor qilish
+“Bekor qilish” tugmasi barcha chizilgan nuqtalarni o‘chiradi.
+
+## 4️⃣ Saqlangan poligonlar
+Chap panelda ko‘rsatiladi.
+Tahrirlash va o‘chirish imkoniyatlari mavjud.
+Barcha polygonlar IndexedDBda saqlanadi (sahifa yangilanganda ham yo‘qolmaydi).
 
