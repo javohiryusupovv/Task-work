@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import MapComponent from "@/components/map/map-component"
-import { MapPin, Download, Upload, Trash2, Moon, Sun, Info, MoveLeft } from "lucide-react"
+import { MapPin, Moon, Sun, Info, MoveLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import PolygonList from "@/components/map/polygon-list"
@@ -48,17 +48,9 @@ export default function Home() {
     localStorage.setItem("dark-mode", (!darkMode).toString())
   }
 
-  const handleClearAll = () => {
-    if (confirm("Barcha polygonlarni o'chirmoqchimisiz?")) {
-      setPolygons([])
-      setSelectedPolygonId(null)
-      localStorage.removeItem("map-polygons")
-    }
-  }
-
   return (
     <>
-        <Button onClick={()=> router.push("/")} className="mx-5 my-3"><MoveLeft/> Back menyu</Button>
+        <Button onClick={()=> router.push("/")} className="mx-5 my-3"><MoveLeft/>Ortga qaytish</Button>
         <div className="mg:h-screen h-full flex flex-col">
         {/* Header */}
         <header className="bg-card border-b border-border px-4 py-3 flex items-center justify-between gap-4 flex-wrap">
@@ -73,16 +65,6 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap">
-            <Button
-                variant="outline"
-                size="sm"
-                onClick={handleClearAll}
-                disabled={polygons.length === 0}
-                className="gap-2 bg-transparent"
-            >
-                <Trash2 className="w-4 h-4" />
-                <span className="hidden sm:inline">Tozalash</span>
-            </Button>
             <Button variant="outline" size="sm" onClick={toggleDarkMode} className="gap-2 bg-transparent">
                 {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </Button>
@@ -101,7 +83,7 @@ export default function Home() {
                     <Info className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                     <p className="text-xs text-muted-foreground leading-relaxed">
                     Xaritada polygon chizish uchun nuqtalarni ketma-ket bosing. Polygonni yakunlash uchun birinchi nuqtani
-                    qayta bosing yoki "Finish" tugmasini bosing.
+                    qayta bosing yoki "Tasdiqlash" tugmasini bosing.
                     </p>
                 </div>
                 </Card>

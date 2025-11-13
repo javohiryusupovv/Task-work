@@ -64,39 +64,43 @@ export function UserFormModal({ open, onOpenChange, user, onSubmit, isLoading }:
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>{user ? "Edit User" : "Create New User"}</DialogTitle>
+          <DialogTitle>{user ? "Foydalanuvchini tahrirlash" : "Yangi foydalanuvchi yaratish"}</DialogTitle>
         </DialogHeader>
 
         <form onSubmit={handleSubmit(onSubmitForm)} className="space-y-4">
           {/* First Name */}
           <div className="space-y-2">
-            <Label htmlFor="firstName">First Name</Label>
+            <Label htmlFor="firstName">Ism</Label>
             <Input
               id="firstName"
-              placeholder="John"
+              placeholder="Ali"
               {...register("firstName")}
               aria-invalid={!!errors.firstName}
               disabled={isLoading}
             />
-            {errors.firstName && <p className="text-sm text-destructive">{errors.firstName.message}</p>}
+            {errors.firstName && (
+              <p className="text-sm text-destructive">{errors.firstName.message}</p>
+            )}
           </div>
 
           {/* Last Name */}
           <div className="space-y-2">
-            <Label htmlFor="lastName">Last Name</Label>
+            <Label htmlFor="lastName">Familiya</Label>
             <Input
               id="lastName"
-              placeholder="Doe"
+              placeholder="Valiyev"
               {...register("lastName")}
               aria-invalid={!!errors.lastName}
               disabled={isLoading}
             />
-            {errors.lastName && <p className="text-sm text-destructive">{errors.lastName.message}</p>}
+            {errors.lastName && (
+              <p className="text-sm text-destructive">{errors.lastName.message}</p>
+            )}
           </div>
 
           {/* Birth Date */}
           <div className="space-y-2">
-            <Label htmlFor="birthDate">Birth Date</Label>
+            <Label htmlFor="birthDate">Tug‘ilgan sana</Label>
             <Input
               id="birthDate"
               type="date"
@@ -105,12 +109,14 @@ export function UserFormModal({ open, onOpenChange, user, onSubmit, isLoading }:
               disabled={isLoading}
               className="block"
             />
-            {errors.birthDate && <p className="text-sm text-destructive">{errors.birthDate.message}</p>}
+            {errors.birthDate && (
+              <p className="text-sm text-destructive">{errors.birthDate.message}</p>
+            )}
           </div>
 
           {/* Gender */}
           <div className="space-y-3">
-            <Label>Gender</Label>
+            <Label>Jinsi</Label>
             <Controller
               name="gender"
               control={control}
@@ -119,29 +125,41 @@ export function UserFormModal({ open, onOpenChange, user, onSubmit, isLoading }:
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="male" id="male" />
                     <Label htmlFor="male" className="font-normal cursor-pointer">
-                      Male
+                      Erkak
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="female" id="female" />
                     <Label htmlFor="female" className="font-normal cursor-pointer">
-                      Female
+                      Ayol
                     </Label>
                   </div>
                 </RadioGroup>
               )}
             />
-            {errors.gender && <p className="text-sm text-destructive">{errors.gender.message}</p>}
+            {errors.gender && (
+              <p className="text-sm text-destructive">{errors.gender.message}</p>
+            )}
           </div>
 
           {/* Buttons */}
           <div className="flex gap-3 justify-end pt-4">
-            <Button type="button" variant="destructive" onClick={() => onOpenChange(false)} disabled={isLoading}>
-              Cancel
+            <Button
+              type="button"
+              variant="destructive"
+              onClick={() => onOpenChange(false)}
+              disabled={isLoading}
+            >
+              Bekor qilish
             </Button>
-            <Button type="submit" disabled={isLoading} className="gap-2 bg-green-400 hover:bg-green-400/80 transition-all duration-200 hover:border-green-500 border-transparent border">
+
+            <Button
+              type="submit"
+              disabled={isLoading}
+              className="gap-2 bg-green-400 hover:bg-green-400/80 transition-all duration-200 hover:border-green-500 border-transparent border"
+            >
               {isLoading && <Spinner />}
-              {user ? "Update User" : "Create User"}
+              {user ? "Yangilash" : "Yaratish"}
             </Button>
           </div>
         </form>

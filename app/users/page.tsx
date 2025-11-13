@@ -155,13 +155,13 @@ export default function UsersPage() {
 
   return (
     <div className="mx-auto max-w-6xl min-h-screen bg-background p-4 md:p-6">
-      <Button onClick={()=> router.push("/")} className="mb-5"><MoveLeft/> Back menyu</Button>
+      <Button onClick={()=> router.push("/")} className="mb-5"><MoveLeft/> Ortga qaytish</Button>
       <>
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Users Management</h1>
+          <h1 className="text-3xl font-bold mb-2">Foydalanuvchilar Boshqaruvi</h1>
           <p className="text-muted-foreground">
-            Create, edit, and manage users in your system
+            Foydalanuvchi yaratish tizimi
           </p>
         </div>
 
@@ -194,7 +194,7 @@ export default function UsersPage() {
               disabled={loading}
               className="bg-green-400 transition-all duration-200 hover:bg-green-400/70"
             >
-              + Create User
+              + Foydalanuvchi yaratish
             </Button>
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function UsersPage() {
         {loading && users.length === 0 ? (
           <div className="text-center py-12">
             <div className="inline-block h-8 w-8 animate-spin rounded-full border-2 border-current border-t-transparent" />
-            <p className="mt-4 text-muted-foreground">Loading users...</p>
+            <p className="mt-4 text-muted-foreground">Foydalanuvchi topilmoqda...</p>
           </div>
         ) : (
           <>

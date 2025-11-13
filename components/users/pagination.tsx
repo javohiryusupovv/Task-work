@@ -25,11 +25,11 @@ export function Pagination() {
         className="h-8"
       >
         <ChevronLeft className="h-4 w-4" />
-        <span className="sr-only">Previous page</span>
+        <span className="sr-only">Orqaga</span>
       </Button>
 
       <div className="text-sm text-muted-foreground">
-        Page <span className="font-semibold">{currentPage}</span> of <span className="font-semibold">{totalPages}</span>
+        Sahifa <span className="font-semibold">{currentPage}</span> - <span className="font-semibold">{totalPages}</span>
       </div>
 
       <Button
@@ -40,7 +40,7 @@ export function Pagination() {
         className="h-8"
       >
         <ChevronRight className="h-4 w-4" />
-        <span className="sr-only">Next page</span>
+        <span className="sr-only">Oldinga</span>
       </Button>
     </div>
   )

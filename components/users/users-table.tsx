@@ -44,11 +44,11 @@ export function UsersTable({ onEdit, onDelete }: UsersTableProps) {
         {/* HEADER DOIM KORINADI */}
         <TableHeader>
           <TableRow className="bg-muted">
-            <TableHead>First Name</TableHead>
-            <TableHead>Last Name</TableHead>
-            <TableHead>Birth Date</TableHead>
-            <TableHead>Gender</TableHead>
-            <TableHead className="w-24">Actions</TableHead>
+            <TableHead>Ism</TableHead>
+            <TableHead>Familiya</TableHead>
+            <TableHead>Tug'ilgan sana</TableHead>
+            <TableHead>Jinsi</TableHead>
+            <TableHead className="w-24">Funksiyalar</TableHead>
           </TableRow>
         </TableHeader>
 
@@ -99,7 +99,7 @@ export function UsersTable({ onEdit, onDelete }: UsersTableProps) {
                       className="h-8 w-8 p-0"
                     >
                       <Pencil className="h-4 w-4" />
-                      <span className="sr-only">Edit</span>
+                      <span className="sr-only">Tahrirlash</span>
                     </Button>
                     <Button
                       size="sm"
@@ -107,8 +107,8 @@ export function UsersTable({ onEdit, onDelete }: UsersTableProps) {
                       onClick={() => onDelete(user)}
                       className="h-8 w-8 p-0 text-destructive hover:bg-destructive/10"
                     >
-                      <Trash2 className="h-4 w-4" />
-                      <span className="sr-only">Delete</span>
+                      <Trash2 className="h-4 w-4 stroke-red-500" />
+                      <span className="sr-only">O'chirish</span>
                     </Button>
                   </div>
                 </TableCell>
@@ -121,8 +121,8 @@ export function UsersTable({ onEdit, onDelete }: UsersTableProps) {
                 className="text-center py-8 text-muted-foreground"
               >
                 {searchQuery
-                  ? "No users found matching your search"
-                  : "No users yet. Create one to get started!"}
+                  ? "Qidiruv bo'yicha foydalanuvchi topilmadi"
+                  : "Hozircha foydalanuvchilar yo'q. Boshlash uchun yangisini yarating!"}
               </TableCell>
             </TableRow>
           )}
