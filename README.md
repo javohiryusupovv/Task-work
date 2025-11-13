@@ -52,3 +52,37 @@ npm run dev
 http://localhost:3000
 ```
 
+## 📁 Loyiha Strukturasi
+
+```bash
+src/
+ ├── app/
+ │   ├── users/
+ │   │     ├── components/          # User table, modals, search UI
+ │   │     └── page.tsx             # Users CRUD sahifasi
+ │   │
+ │   ├── map/
+ │   │     ├── components/          # Polygon drawing UI (Leaflet)
+ │   │     └── page.tsx             # Xarita sahifasi
+ │   │
+ │   └── layout.tsx                 # Root layout (App Router)
+ │
+ ├── lib/
+ │   ├── store.ts                   # Zustand global state
+ │   ├── db.ts                      # IndexedDB CRUD helperlar
+ │   └── schemas/
+ │         └── userSchema.ts        # Zod validatsiya sxemasi
+ │
+ ├── hooks/
+ │   └── useDebounce.ts             # Debounce custom hook
+ │
+ ├── components/
+ │   ├── ui/                        # Shadcn UI komponentlari
+ │   └── shared/                    # Skeleton, Spinner, Confirm modal
+ │
+ └── styles/
+     └── globals.css                # Global Tailwind style
+
+
+
+
