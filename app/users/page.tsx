@@ -89,9 +89,9 @@ export default function UsersPage() {
       await addUserToDB(newUser);
       addUser(newUser);
       setFormModalOpen(false);
-      setSuccessMessage("User created successfully!");
+      setSuccessMessage("Foydalanuvchi muvaffaqiyatli yaratildi!");
     } catch (err) {
-      setError("Failed to create user");
+      setError("Foydalanuvchini yaratishda xatolik yuz berdi");
     } finally {
       setLoading(false);
     }
@@ -169,14 +169,14 @@ export default function UsersPage() {
         {successMessage && (
           <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-2">
             <CheckCircle2 className="h-5 w-5 text-green-600" />
-            <span className="text-green-800">{successMessage}</span>
+            <span className="text-green-800 max-sm:text-[15px]">{successMessage}</span>
           </div>
         )}
 
         {error && (
           <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2">
             <AlertCircle className="h-5 w-5 text-red-600" />
-            <span className="text-red-800">{error}</span>
+            <span className="text-red-800 max-sm:text-[13px]">{error}</span>
           </div>
         )}
 
